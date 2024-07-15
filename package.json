@@ -32,6 +32,7 @@
     "typescript": "^5.2.2",
     "unocss": "^0.61.3",
     "vite": "^5.3.1",
+    "vite-plugin-imagemin": "^0.6.1",
     "vite-plugin-svgr": "^4.2.0"
   }
 }
