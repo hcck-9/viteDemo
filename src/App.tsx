@@ -8,6 +8,7 @@ function App() {
       <Header />
       <Container />
       <Footer />
+      {1 + 1}
     </>
   );
 }
