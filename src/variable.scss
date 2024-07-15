@@ -1,0 +1,17 @@
+// 主题切换方案；通过在HTML元素添加data-theme为light或者dark来进行主题之间的切换。同时定义出亮色主题和暗色主题的样式。
+
+$font-color-light: red;
+$background-light: #fff;
+$font-color-dark: #fff;
+$background-dark: #000;
+
+:root {
+  &[data-theme="light"] {
+    color: $font-color-light;
+    background: $background-light;
+  }
+  &[data-theme="dark"] {
+    color: $font-color-dark;
+    background: $background-dark;
+  }
+}
