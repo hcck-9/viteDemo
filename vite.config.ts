@@ -36,7 +36,7 @@ export default defineConfig({
       pngquant: {
         quality: [0.8, 0.9],
       },
-      // svg 优化，没有使用svgr优化过的会进行这个优化
+      // svg 优化，没有使用svgr优化过的会进行这个优化，使用过了之后会将svg渲染成组件，就没渲染了。
       svgo: {
         plugins: [
           {
@@ -78,5 +78,16 @@ export default defineConfig({
   build: {
     // 当静态资源超过临界值则提取成为单独的文件。
     assetsInlineLimit: 8 * 1024,
+  },
+  // 预构建两件事情
+  // 1、将非ESM的格式转化为ESM的格式。使其可以在浏览器中通过type=module正常加载。
+  // 2、打包第三方库代码，将各个三方库分散文件打包在同一个文件中，减少http的请求。
+  optimizeDeps: {
+    // 入口文件
+    // entries: ["./src/main.tsx"],
+    // 强制预构建、或者提前声明需要按需加载的依赖。
+    // include: ["react"],
+    // 排除的包
+    // exclude: ["@loadable/component"],
   },
 });
